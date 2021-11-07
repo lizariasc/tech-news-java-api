@@ -2,10 +2,8 @@ package com.technews.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 // persistable object, so that the User class can map to a table
 @Entity
@@ -14,8 +12,11 @@ import javax.persistence.Table;
 // specifies the name of the table that this class maps to
 @Table(name = "user")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String username;
+    @Column(unique = true)
     private String email;
     private String password;
     boolean loggedIn;
@@ -23,8 +24,5 @@ public class User {
     private List<Post> posts;
     private List<Vote> votes;
     private List<Comment> comments;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    
 }

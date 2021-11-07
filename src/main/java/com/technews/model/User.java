@@ -3,6 +3,8 @@ package com.technews.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 // persistable object, so that the User class can map to a table
@@ -22,4 +24,7 @@ public class User {
     private List<Vote> votes;
     private List<Comment> comments;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 }

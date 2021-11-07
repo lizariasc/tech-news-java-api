@@ -19,10 +19,11 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+    @Transient
     boolean loggedIn;
 
     private List<Post> posts;
     private List<Vote> votes;
     private List<Comment> comments;
-    
+
 }

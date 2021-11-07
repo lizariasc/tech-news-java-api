@@ -12,5 +12,14 @@ import javax.persistence.Table;
 // specifies the name of the table that this class maps to
 @Table(name = "user")
 public class User {
+    private Integer id;
+    private String username;
+    private String email;
+    private String password;
+    boolean loggedIn;
+
+    private List<Post> posts;
+    private List<Vote> votes;
+    private List<Comment> comments;
 
 }

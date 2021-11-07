@@ -19,6 +19,14 @@ public class Demo {
         return Objects.hash(name, age);
     }
 
+    @Override
+    public String toString() {
+        return "Demo{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

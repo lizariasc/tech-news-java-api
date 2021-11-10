@@ -11,7 +11,9 @@ public class Post {
     private Integer id;
     private String title;
     private String postUrl;
+    @Transient
     private String userName;
+    @Transient
     private int voteCount;
     private Integer userId;
     private Date postedAt = new Date();

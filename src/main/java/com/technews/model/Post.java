@@ -10,4 +10,11 @@ public class Post {
     private Date postedAt = new Date();
     private Date updatedAt = new Date();
     private List<Comment> comments;
+
+    @Entity
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @Table(name = "post")
+    public class Post {
+
+    }
 }

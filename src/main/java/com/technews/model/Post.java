@@ -1,6 +1,13 @@
 package com.technews.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String title;
     private String postUrl;
